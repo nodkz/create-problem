@@ -5,7 +5,7 @@ const nyanProgress = require('nyan-progress');
 const tmp = require('tmp');
 const chalk = require('chalk');
 const disk = require('diskusage');
-var os = require('os')
+const os = require('os')
 
 let isComplete = false;
 
@@ -35,15 +35,14 @@ progress.start({
     ],
     finished: '\n\n\n\nFinished'
   },
- }); // start the progress
+ });
 
 const timer = setInterval(() => {
   const tmp = getDiskSpace();
   const inc = tmp.used - lastDiskData.used;
   lastDiskData = tmp;
 
-createFatFile();
-
+  createFileWithZeros();
   progress.tick(inc);
 
   if (progress.isComplete || isComplete) {
@@ -66,21 +65,21 @@ function getDiskSpace() {
   };
 }
 
-let writingFile = false;
-function createFatFile(size = 100000000) {
-  if (writingFile) return;
-  writingFile = true;
+let isWritingFile = false;
+function createFileWithZeros(size) {
+  if (isWritingFile) return;
+  isWritingFile = true;
 
-  var tmpobj = tmp.fileSync({
+  const tmpobj = tmp.fileSync({
     dir: tmpDir.name,
     prefix: 'yarn-create-problem-',
     postfix: '.txt',
     keep: true,
   });
-  fs.writeSync(tmpobj.fd, Buffer.alloc(size, 0));
+  fs.writeSync(tmpobj.fd, Buffer.alloc(size || 100000000, 0));
   fs.close(tmpobj.fd);
 
-  writingFile = false;
+  isWritingFile = false;
 }
 
 function cleanUp() {

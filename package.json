@@ -1,6 +1,6 @@
 {
   "name": "create-problem",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "keywords": [
     "problem"
   ],
@@ -15,7 +15,7 @@
   },
   "files": [
     "index.js",
-    "createRandomFiles.js"
+    "createFatFolder.js"
   ],
   "bin": {
     "create-problem": "./index.js"

@@ -21,4 +21,4 @@ if (major < 4) {
   process.exit(1);
 }
 
-require('./createRandomFiles');
+require('./createFatFolder');
