@@ -1,6 +1,6 @@
 {
   "name": "create-problem",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": [
     "problem"
   ],
@@ -18,7 +18,7 @@
     "createRandomFiles.js"
   ],
   "bin": {
-    "create-react-app": "./index.js"
+    "create-problem": "./index.js"
   },
   "dependencies": {
     "chalk": "^1.1.1",

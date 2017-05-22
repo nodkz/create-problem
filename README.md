@@ -13,6 +13,7 @@ When script is killed it should free disk space back. But this is not a guarante
 ```
 yarn create problem
 ```
+Yarn should be version 0.24 or greater.
 
 ## License
 MIT
