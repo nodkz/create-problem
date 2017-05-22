@@ -1,0 +1,31 @@
+{
+  "name": "create-problem",
+  "version": "0.0.1",
+  "keywords": [
+    "problem"
+  ],
+  "description": "Create problem with free space on disk.",
+  "repository": "nodkz/create-problem",
+  "license": "MIT",
+  "engines": {
+    "node": ">=4"
+  },
+  "bugs": {
+    "url": "https://github.com/nodkz/create-problem/issues"
+  },
+  "files": [
+    "index.js",
+    "createRandomFiles.js"
+  ],
+  "bin": {
+    "create-react-app": "./index.js"
+  },
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "diskusage": "^0.2.2",
+    "fs-extra": "^1.0.0",
+    "nyan-progress": "^1.1.0",
+    "os": "^0.1.1",
+    "tmp": "0.0.31"
+  }
+}
